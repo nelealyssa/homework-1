@@ -8,12 +8,12 @@ This file contains your Twitter keys
 
 """
 
-consumer_key='tQ87kCwL6jTbmhCPgpfuIy98Z'
+consumer_key='fIP5EM3dbhy9qjyeCZ2rzChht'
 
-consumer_secret='ifM1jNvTW31onofnZzUjwIUAya5N9byxc4VOI1vSwSQei68WF8t'
+consumer_secret='5eifpG9jis5LxY4KiYX1Ua48OzDp3RmecvLsUkYWrJZTqvIdlB'
 
-access_token='1582678895706492928-yfKfeboybVfIlD8iJmlymNcG6HIFNR'
+access_token='4696567626-wFt9JVheb9ecbP50uz6j5KSQql23c21PbsADWMA'
 
-access_token_secret='Sai84wboH56uAgbkPkiD24A2swSNwbOErk2XSSdLSMgJY'
+access_token_secret='ZBly7Ud1i2E9VPgfWdhDlcZughwSQ7Hb4ch7YuVIglI4U'
 
-bearer_token='AAAAAAAAAAAAAAAAAAAAAJtgiQEAAAAAzSquDACrPTOsjy17BONUp0bKBHg%3Dwy7fPdozrPxDTzaSoAyebOG31Z7cbwrsJeGqO8kLZrQQKC8gaJ'
+bearer_token='AAAAAAAAAAAAAAAAAAAAAACcjwEAAAAAmu2Pi81yplfmFcU15IoR9hkdwVY%3Da2QYuROKBjfDYedkHD7pKEa7vv8n8T4sDVpdsqYwxLAhK073em'
