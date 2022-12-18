@@ -102,4 +102,3 @@ c = chart = alt.Chart(source).encode(
 pie = chart.mark_arc()
 
 pie
-st.altair_chart(c, use_container_width=True)
