@@ -14,15 +14,14 @@ df = pd.read_csv('https://raw.githubusercontent.com/nelealyssa/homework-1/main/d
 
 
 # HEADER
-st.header('Group L: Dashboard')
+st.header('Group L')
 
 # Title of our app
-st.title("Task 5: Streamlit")
+st.title("Task 5: Dashboard")
 
 st.dataframe(df)
 
-
-# BODY
+# BODY 1
 st.write("Visualisierung 1: Bar Chart Altair")
 
 c = alt.Chart(df).mark_bar().encode(
@@ -32,7 +31,7 @@ c = alt.Chart(df).mark_bar().encode(
 )
 st.altair_chart(c, use_container_width=True)
 
-
+# Body 2
 st.write("Visualisierung 2: Dodged Bar Chart Altair")
 
 c = alt.Chart(df).mark_bar().encode(
@@ -57,7 +56,7 @@ c = alt.Chart(df).mark_bar().encode(
 )
 st.altair_chart(c, use_container_width=True)
 
-
+# Body 3
 st.write("Visualisierung 3: Scatterplot Paired Data Altair (interactive)")
 
 c = alt.Chart(df).mark_circle(size=70).encode( 
@@ -72,20 +71,35 @@ c = alt.Chart(df).mark_circle(size=70).encode(
 
 st.altair_chart(c, use_container_width=True)
 
-
+# Body 4
 st.write("Visualisierung 4: Pie Chart Altair")
 
+#Spalte umbenennen
+df["smartwatch"] = df["If you had a smartwatch (like the soon to be released Apple Watch), how likely or unlikely would you be to check the weather on that device?"] 
+
+# Data Format von Objekt in Kategorie ändern 
+df['smartwatch'].astype("category")
+
+# create data for pie chart
+source = pd.DataFrame(df.smartwatch.value_counts())
+
+# set index to column
+source = source.reset_index()
+
+# rename columns
+source.rename(columns={"index": "category", "smartwatch": "value"}, inplace=True)
+
 c = chart = alt.Chart(source).encode(
-    theta=alt.Theta("value:Q", stack=True), 
-    color=alt.Color("category:N", legend=None)
+    theta=alt.Theta(field="value", type="quantitative"), 
+    color=alt.Color('category',
+                    legend=alt.Legend(title="Answers"))
+     
 ).properties(
-    title='If you had a smartwatch (like the soon to be released Apple Watch), how likely or unlikely would you be to check the weather on that device?',
-    width=500,
+    title='If you had a smartwatch, how likely or unlikely would you be to check the weather on that device?',
+    width=735,
     height=350
 )
-pie = chart.mark_arc(outerRadius=130)
-text = chart.mark_text(radius=165, size=10).encode(text="category:N")
+pie = chart.mark_arc()
 
-pie + text 
-
+pie
 st.altair_chart(c, use_container_width=True)
